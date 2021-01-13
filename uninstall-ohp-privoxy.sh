@@ -24,5 +24,6 @@ systemctl reset-failed
 
 rm -rf /etc/privoxy/user.action
 rm -rf /etc/privoxy
+rm -rf uninstall-ohp-privoxy.sh
 
 echo "Done. Reboot is recommended. Type reboot to restart vps."

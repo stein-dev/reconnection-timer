@@ -18,15 +18,22 @@ echo 'It is recommended to increment the service name if file already exists.'
 echo 'e.g ohpserver-001, ohpserver-002'
 echo ' '
 echo 'Add New Server To OHP (SSH)'
-read -e -p 'Input service name: ' -i 'ohpserver-001' SERNAME
-read -e -p 'Input your Server IP: ' -i $SERVER_IP SERVER_IP
+read -e -p 'Input Service Name: ' -i 'ohpserver-001' SERNAME
+read -e -p 'Input Server IP: ' -i $SERVER_IP SERVER_IP
 read -e -p 'Input SSH Port: ' -i '22' SSH_PORT
 read -e -p 'Input Privoxy Port: ' -i '8118' PRIVOXY_PORT
-read -e -p 'Input ohpserver Port: ' -i '9991' OHP_PORT
+read -e -p 'Input OHP Port: ' -i '9991' OHP_PORT
 
+echo 'Checking if service file exists...'
 FILE=/etc/systemd/system/$SERNAME.service
 if [[ -f "$FILE" ]]; then
     echo "Service Name: $FILE exists."
+    exit 1
+fi
+echo 'Checking if OHP PORT is being used...'
+PORT=$(lsof -i:$OHP_PORT | grep $OHP_PORT)
+if [[ ! -z "$PORT" ]]; then
+    echo "OHP Port: $OHP_PORT is being used by another program."
     exit 1
 fi
 

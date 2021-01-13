@@ -1,11 +1,13 @@
 **Reconnection Timer for OHP and SSHPLUS Proxy**
 
     Usage:  
+    
     Reconnection Timer by @pigscanfly | Version: 0.0.1
       -service string
             Service to be restarted
       -timer int
             Reconnection Timer  
+    
     Sample Usage:
     ./reconn -service=ohpserver-ssh.service -timer=55      
 
@@ -19,7 +21,7 @@
     chmod 755 setup-ohp-ssh.sh
     ./setup-ohp-ssh.sh   
 
-### **Setup ssh management using SSHPLUS MANAGER**
+### **Setup ssh using SSHPLUS MANAGER**
     apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
 ### **TODO**

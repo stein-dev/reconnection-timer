@@ -24,9 +24,8 @@ read -e -p 'Input Privoxy Port: ' -i '8118' PRIVOXY_PORT
 read -e -p 'Input ohpserver Port: ' -i '9991' OHP_PORT
 
 FILE=/etc/systemd/system/$SERNAME.service
-if test -f "$FILE"; then
+if [[ -f "$FILE" ]]; then
     echo "Service Name: $FILE exists."
-    echo ""
     exit 1
 fi
 

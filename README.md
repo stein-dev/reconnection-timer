@@ -14,7 +14,7 @@
     chmod 755 setup-timer.sh
     ./setup-timer.sh
     
-### **Setup ohp for ssh** 
+### **Setup ohp+privoxy for ssh** 
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-ohp-ssh.sh
     chmod 755 setup-ohp-ssh.sh
     ./setup-ohp-ssh.sh   

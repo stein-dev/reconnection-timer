@@ -66,4 +66,4 @@ echo '##############################' >> ohpserver.logs
 cat ohpserver.logs
 
 echo 'Setup completed!'
-echo "Check ohpserver status by typing systemctl status $SERNAME"
+echo 'Check ohpserver status by typing systemctl status' $SERNAME

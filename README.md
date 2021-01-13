@@ -7,7 +7,7 @@
       -timer int
             Reconnection Timer
     Sample Usage:
-    ./reconn -service=ohpserver-ssh -timer=55      
+    ./reconn -service=reconn.service -timer=55      
 
 ### **Setup reconnection-timer as a service**   
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-timer.sh

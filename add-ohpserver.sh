@@ -48,11 +48,11 @@ systemctl start $SERNAME
 rm -rf add-ohpserver.sh
 
 echo '##############################' >> ohpserver.logs
-echo 'Service Name: ' $SERNAME >> ohpserver.logs
-echo 'Server IP: ' $SERVER_IP >> ohpserver.logs
-echo 'SSH Port: ' $SSH_PORT >> ohpserver.logs
-echo 'HTTP Port: ' $PRIVOXY_PORT >> ohpserver.logs
-echo 'OHP Port: ' $OHP_PORT >> ohpserver.logs
+echo 'Service Name:' $SERNAME >> ohpserver.logs
+echo 'Server IP:' $SERVER_IP >> ohpserver.logs
+echo 'SSH Port:' $SSH_PORT >> ohpserver.logs
+echo 'HTTP Port:' $PRIVOXY_PORT >> ohpserver.logs
+echo 'OHP Port:' $OHP_PORT >> ohpserver.logs
 echo '##############################' >> ohpserver.logs
 
 cat ohpserver.logs

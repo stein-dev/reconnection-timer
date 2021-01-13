@@ -14,7 +14,8 @@ fi
 echo 'Run setup-ohp-ssh.sh before executing this script. [required]'
 echo 'This script allows you to use ohp+privoxy to other ssh server.'
 echo 'Make sure to add the host and port correctly.'
-echo 'It is recommended to increment the service name. e.g ohpserver-001, ohpserver-002'
+echo 'It is recommended to increment the service name if file already exists.' 
+echo 'e.g ohpserver-001, ohpserver-002'
 echo ' '
 echo 'Add New Server To OHP (SSH)'
 read -e -p 'Input service name: ' -i 'ohpserver-001' SERNAME

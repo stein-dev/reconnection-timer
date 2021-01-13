@@ -20,5 +20,6 @@ systemctl daemon-reload
 systemctl reset-failed
 
 rm -rf remove-ohpserver.ssh
+rm -rf ohpserver.logs
 
 echo "Done. Reboot is recommended. Type reboot to restart vps."

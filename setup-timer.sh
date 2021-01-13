@@ -22,7 +22,7 @@ chmod 755 /usr/local/bin/reconn
 echo 'Setting up timer service'
 cat <<EOF > /etc/systemd/system/reconn.service
 [Unit]
-Description=Reconnection Timer for OHP & SSHPLUS Proxy
+Description=Reconnection Timer for OHP | @pigscanfly
 Wants=network.target
 After=network.target
 

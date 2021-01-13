@@ -6,7 +6,7 @@
             Service to be restarted
       -timer int
             Reconnection Timer
-### **Reconn**  
+    Sample Usage:
     ./reconn -service=ohpserver-ssh -timer=55      
 
 ### **Setup reconnection-timer as a service**   

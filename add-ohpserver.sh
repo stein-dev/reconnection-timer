@@ -60,8 +60,6 @@ echo 'Start services on boot'
 systemctl enable $SERNAME
 systemctl start $SERNAME
 
-rm -rf add-ohpserver.sh
-
 echo '##############################' >> ohpserver.logs
 echo 'Service Name:' $SERNAME >> ohpserver.logs
 echo 'Server IP:' $SERVER_IP >> ohpserver.logs

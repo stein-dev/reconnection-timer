@@ -2,6 +2,8 @@
 
 clear
 
+SERVER_IP=`ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'`
+
 # Check if root
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2

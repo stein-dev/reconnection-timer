@@ -13,8 +13,8 @@
     ./reconn -service=ohpserver-ssh.service -timer=55      
 
 ### **Setup reconnection-timer as a service**   
-    wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-timer.sh
-    chmod 755 setup-timer.sh
+    wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-timer-ohp.sh
+    chmod 755 setup-timer-ohp.sh
     ./setup-timer.sh
     
 ### **Setup ohp+privoxy for ssh** 

@@ -8,16 +8,17 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+echo ' '
 echo 'Created by @pigscanfly | Version 0.0.1'
-
+echo ' '
 echo "Removing files..."
 
-systemctl disable reconn
-
-rm -rf /usr/local/bin/reconn
+systemctl stop reconn.service
+systemctl disable reconn.service
 rm -rf /etc/systemd/system/reconn.service
-
+rm -rf /usr/local/bin/reconn
 systemctl daemon-reload
+systemctl reset-failed
 
 rm -rf uninstall-reconn.ssh
 

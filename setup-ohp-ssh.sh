@@ -1,5 +1,4 @@
 #!/bin/bash
-# file: setup-ohp-ssh.sh
 
 DISTRO=`awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }'`
 SERVER_IP=`ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'`
@@ -93,10 +92,12 @@ systemctl start ohpserver-ssh
 
 rm -rf setup-ohp-ssh.sh
 
-# Installation Completed
-
 echo '##############################'
 echo 'Server IP:' $SERVER_IP
 echo 'SSH Port:' $SSH_PORT
 echo 'HTTP Port:' $PRIVOXY_PORT
 echo 'OHP Port:' $OHP_PORT
+echo '##############################'
+
+echo 'Setup completed!'
+echo 'Check ohpserver status by typing systemctl status ohpserver-ssh'

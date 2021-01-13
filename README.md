@@ -9,12 +9,12 @@
 ### **Reconn**  
     ./reconn -service=ohpserver -timer=55      
 
-### ** Setup reconnection-timer as a service**   
+### **Setup reconnection-timer as a service**   
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-timer.sh
     chmod 755 setup-timer.sh
     ./setup-timer.sh
     
-### ** Setup ohp for ssh** 
+### **Setup ohp for ssh** 
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-ohp-ssh.sh
     chmod 755 setup-ohp-ssh.sh
     ./setup-ohp-ssh.sh   

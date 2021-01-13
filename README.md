@@ -1,11 +1,11 @@
 **Reconnection Timer for OHP and SSHPLUS Proxy**
 
-    Usage:
+    Usage:  
     Reconnection Timer by @pigscanfly | Version: 0.0.1
       -service string
             Service to be restarted
       -timer int
-            Reconnection Timer
+            Reconnection Timer  
     Sample Usage:
     ./reconn -service=ohpserver-ssh.service -timer=55      
 

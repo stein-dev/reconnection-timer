@@ -8,19 +8,21 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+echo ' '
 echo 'Created by @pigscanfly | Version 0.0.1'
-
-echo "Removing files..."
+echo ' '
+echo 'Removing files...'
 
 DEBIAN_FRONTEND=noninteractive apt purge -y privoxy
 
-systemctl disable ohpserver-ssh
-
-rm -rf /usr/local/bin/ohpserver-ssh
+systemctl stop ohpserver-ssh.service
+systemctl disable ohpserver-ssh.service
 rm -rf /etc/systemd/system/ohpserver-ssh.service
+rm -rf /usr/local/bin/ohpserver-ssh
+systemctl daemon-reload
+systemctl reset-failed
+
 rm -rf /etc/privoxy/user.action
 rm -rf /etc/privoxy
-
-systemctl daemon-reload
 
 echo "Done. Reboot is recommended. Type reboot to restart vps."

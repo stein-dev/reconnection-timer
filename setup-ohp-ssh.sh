@@ -4,6 +4,7 @@
 DISTRO=`awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }'`
 SERVER_IP=`ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'`
 
+clear
 
 # Check if root
 if [ "$(id -u)" != "0" ]; then
@@ -19,17 +20,11 @@ read -e -p 'Input Privoxy Port: ' -i '8118' PRIVOXY_PORT
 read -e -p 'Input ohpserver Port: ' -i '9999' OHP_PORT
 
 # Install Dependencies
-echo 'Installing Dependencies'
+echo 'Installing privoxy'
 DEBIAN_FRONTEND=noninteractive apt install -y privoxy 
-echo 'Dependencies Installed!' 
-
-echo 'Installing ohpserver'
-wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/ohpserver
-mv ohpserver /usr/local/bin/ohpserver-ssh
-chmod 755 /usr/local/bin/ohpserver-ssh
 
 # Setup Privoxy
-echo 'Setting up Privoxy'
+echo 'Setting up Privoxy...'
 mkdir /etc/privoxy/
 cat <<EOF > /etc/privoxy/config
 user-manual /usr/share/doc/privoxy/user-manual
@@ -69,7 +64,12 @@ $SERVER_IP
 EOF
 
 # Setup ohpserver
-echo 'Setup ohpserver'
+echo 'Installing ohpserver...'
+wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/ohpserver
+mv ohpserver /usr/local/bin/ohpserver-ssh
+chmod 755 /usr/local/bin/ohpserver-ssh
+
+echo 'Setting up ohpserver...'
 cat <<EOF > /etc/systemd/system/ohpserver-ssh.service
 [Unit]
 Description=OHP For SSH
@@ -91,11 +91,10 @@ systemctl start privoxy
 systemctl enable ohpserver-ssh
 systemctl start ohpserver-ssh
 
+rm -rf setup-ohp-ssh.sh
+
 # Installation Completed
-echo 'Installation Completed!'
-echo ''
-echo ''
-echo 'Installation Information'
+
 echo '##############################'
 echo 'Server IP:' $SERVER_IP
 echo 'SSH Port:' $SSH_PORT

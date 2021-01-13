@@ -15,7 +15,7 @@
 ### **Setup reconnection-timer as a service**   
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-timer-ohp.sh
     chmod 755 setup-timer-ohp.sh
-    ./setup-timer.sh
+    ./setup-timer-ohp.sh
     
 ### **Setup ohp+privoxy for ssh** 
     wget https://raw.githubusercontent.com/stein-dev/reconnection-timer/main/setup-ohp-ssh.sh

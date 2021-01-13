@@ -19,4 +19,6 @@ rm -rf /etc/systemd/system/reconn.service
 
 systemctl daemon-reload
 
+rm -rf uninstall-reconn.ssh
+
 echo "Done. Reboot is recommended. Type reboot to restart vps."

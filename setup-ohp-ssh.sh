@@ -101,3 +101,4 @@ echo '##############################'
 
 echo 'Setup completed!'
 echo 'Check ohpserver status by typing systemctl status ohpserver-ssh'
+echo 'Check privoxy status by typing systemctl status privoxy'

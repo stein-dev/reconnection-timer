@@ -11,7 +11,7 @@ fi
 echo 'Created by @pigscanfly | Version 0.0.1'
 
 # Read Input
-echo 'Reconnection Timer for Globe No Load (OHP & SSHPLUS PROXY)'
+echo 'Reconnection Timer for Globe No Load (OHP)'
 echo ''
 read -e -p 'Input name of service: ' -i 'ohpserver-ssh' SERNAME
 read -e -p 'Input timer(seconds)' -i '55' TSEC

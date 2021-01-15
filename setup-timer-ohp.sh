@@ -23,7 +23,7 @@ chmod 755 /usr/local/bin/reconn
 
 # Setup timer service
 echo 'Setting up timer service'
-cat <<EOF > /etc/systemd/system/reconn.service
+cat <<EOF > /etc/systemd/system/reconn-$SERNAME.service
 [Unit]
 Description=Reconnection Timer for OHP | @pigscanfly
 Wants=network.target
@@ -40,8 +40,10 @@ EOF
 
 # Enable on boot
 echo 'Starting timer on boot'
-systemctl enable reconn
-systemctl start reconn
+systemctl enable reconn-$SERNAME
+systemctl start reconn-$SERNAME
+
+rm -rf setup-timer-ohp.sh
 
 echo 'Setup completed!'
-echo 'Check reconn status by typing systemctl status reconn'
+echo 'Check reconn status by typing systemctl status reconn-$SERNAME'

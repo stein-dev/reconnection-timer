@@ -46,4 +46,4 @@ systemctl start reconn-$SERNAME
 rm -rf setup-timer-ohp.sh
 
 echo 'Setup completed!'
-echo 'Check reconn status by typing systemctl status reconn-$SERNAME'
+echo 'Check reconn status by typing systemctl status reconn-' + $SERNAME
